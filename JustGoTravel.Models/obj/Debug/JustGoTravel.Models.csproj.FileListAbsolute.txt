@@ -1,0 +1,16 @@
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\bin\Debug\JustGoTravel.Models.dll
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\bin\Debug\JustGoTravel.Models.pdb
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\obj\Debug\JustGoTravel.Models.csprojAssemblyReference.cache
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\obj\Debug\JustGoTravel.Models.csproj.CoreCompileInputs.cache
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\obj\Debug\JustGoTravel.Models.dll
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\obj\Debug\JustGoTravel.Models.pdb
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\bin\Debug\JustGoTravel.Models.dll.config
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\bin\Debug\EntityFramework.dll
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\bin\Debug\EntityFramework.xml
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\obj\Debug\JustGoTravel.Models.csproj.CopyComplete
