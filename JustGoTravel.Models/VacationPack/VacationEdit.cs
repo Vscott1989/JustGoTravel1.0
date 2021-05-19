@@ -11,10 +11,7 @@ namespace JustGoTravel.Models.VacationPack
     {
         public int ID { get; set; }
 
-       
         public int AgentID { get; set; }
-        
-        public int RatingID { get; set; }
 
         [MaxLength(100, ErrorMessage = "Sorry you entered to many Charachers")]
         [Display(Name = "Title of Vacation Package ")]

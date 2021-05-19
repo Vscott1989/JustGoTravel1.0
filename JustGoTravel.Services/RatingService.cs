@@ -26,6 +26,7 @@ namespace JustGoTravel.Services
                 StarRating = model.StarRating,
                 HotelRating = model.HotelRating,
                 FoodRating = model.FoodRating,
+                VacationPackID = model.VacationPackID
             };
             
             
@@ -41,6 +42,7 @@ namespace JustGoTravel.Services
                     .Select(e => new RatingListItem
                     {
                         ID = e.ID,
+                        VactionID=e.VacationPackID,
                         StarRating = e.StarRating,
                         HotelRating = e.HotelRating,
                         FoodRating = e.FoodRating
@@ -48,6 +50,42 @@ namespace JustGoTravel.Services
                     });
                 return query.ToArray();    
         }
+        public RatingDetail GetRatingById(int id)
+        {
+            var entity = _context
+                .Ratings
+                .Single(e => e.ID == id && e.AuthorID == _userId);
+            return new RatingDetail
+            {
+                ID = entity.ID,
+                VacationID=entity.VacationPackID,
+                StarRating = entity.StarRating,
+                HotelRating = entity.HotelRating,
+                FoodRating = entity.FoodRating,
+               
+            };
+        }
+        public bool UpdateRating(RatingEdit model)
+        {
+            var entity = _context
+                .Ratings
+                .Single(e => e.ID == model.ID && e.AuthorID == _userId);
 
+            entity.StarRating = model.StarRating;
+            entity.HotelRating = model.HotelRating;
+            entity.FoodRating = model.FoodRating;
+
+            return _context.SaveChanges() == 1;
+            
+        }
+        public bool DeleteRating(int id)
+        {
+            var entity = _context
+                .Ratings
+                .Single(e => e.ID == id && e.AuthorID == _userId);
+            _context.Ratings.Remove(entity);
+
+            return _context.SaveChanges() == 1;
+        }
     }
 }

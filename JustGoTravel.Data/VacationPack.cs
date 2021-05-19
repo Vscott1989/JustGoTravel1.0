@@ -35,15 +35,14 @@ namespace JustGoTravel.Data
         public DateTimeOffset TimeOfPublication { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
 
-        [Required]
-        [ForeignKey(nameof(Rating))]
-        public int RatingID { get; set; }
-        public virtual Rating Rating { get; set; }
+        public virtual ICollection<Rating> Ratings { get; set; }
 
         [Required]
         [ForeignKey(nameof(Agent))]
         public int AgentID { get; set; }
         public virtual Agent Agent { get; set; }
+
+        
 
     }
 }

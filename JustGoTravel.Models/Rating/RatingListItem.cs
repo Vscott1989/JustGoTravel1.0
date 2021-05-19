@@ -10,6 +10,7 @@ namespace JustGoTravel.Models.Rating
    public class RatingListItem
     {
         public int ID { get; set; }
+        public int VactionID { get; set; }
 
         [Display(Name = "StarRating (0-5)")]
         public double StarRating { get; set; }

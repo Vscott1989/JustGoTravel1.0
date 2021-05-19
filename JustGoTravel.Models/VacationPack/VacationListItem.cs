@@ -12,7 +12,6 @@ namespace JustGoTravel.Models.VacationPack
         [Display(Name = "ID")]
         public int ID { get; set; }
         public int AgentID { get; set; }
-        public int RatingID { get; set; }
         [Display(Name = "Vacation Package Name")]
         public string Title { get; set; }
         [Display(Name = "Length of Trip")]
@@ -32,7 +31,7 @@ namespace JustGoTravel.Models.VacationPack
     public class VacationPackListItemAgent
     {
         public int ID { get; set; }
-        public string AgentName { get; set; }
+
         [Display(Name = "ID")]
         public string Title { get; set; }
         [Display(Name = "Length of Trip")]
@@ -52,7 +51,8 @@ namespace JustGoTravel.Models.VacationPack
     public class VacationPackListItemRating
     {
         public int ID { get; set; }
-        public double RatingStarRating { get; set; }
+        public int VacatonID { get; set; }
+        public int AgentID { get; set; }
 
         [Display(Name = "Vacation Package Name")]
         public string Title { get; set; }

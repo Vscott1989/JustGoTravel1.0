@@ -14,6 +14,5 @@ C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Data\bin\Debug\Microsoft.A
 C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Data\obj\Debug\JustGoTravel.Data.csproj.CopyComplete
 C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Data\obj\Debug\JustGoTravel.Data.dll
 C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Data\obj\Debug\JustGoTravel.Data.pdb
-C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Data\obj\Debug\JustGoTravel.Data.Migrations.InitialCreate.resources
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Data\obj\Debug\JustGoTravel.Data.Migrations.FirstMigration.resources
 C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Data\obj\Debug\JustGoTravel.Data.csproj.GenerateResource.cache
-C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Data\obj\Debug\JustGoTravel.Data.Migrations.FirstCommit.resources

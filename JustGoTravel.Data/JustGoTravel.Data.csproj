@@ -57,13 +57,9 @@
     <Compile Include="Agent.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="IdentityUserRoleConfiguraion.cs" />
-    <Compile Include="Migrations\202105171403160_InitialCreate.cs" />
-    <Compile Include="Migrations\202105171403160_InitialCreate.Designer.cs">
-      <DependentUpon>202105171403160_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105171417186_FirstCommit.cs" />
-    <Compile Include="Migrations\202105171417186_FirstCommit.Designer.cs">
-      <DependentUpon>202105171417186_FirstCommit.cs</DependentUpon>
+    <Compile Include="Migrations\202105192156473_FirstMigration.cs" />
+    <Compile Include="Migrations\202105192156473_FirstMigration.Designer.cs">
+      <DependentUpon>202105192156473_FirstMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,11 +71,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105171403160_InitialCreate.resx">
-      <DependentUpon>202105171403160_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105171417186_FirstCommit.resx">
-      <DependentUpon>202105171417186_FirstCommit.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105192156473_FirstMigration.resx">
+      <DependentUpon>202105192156473_FirstMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -30,7 +30,6 @@ namespace JustGoTravel.Services
                 Description = model.Description,
                 TimeOfPublication = DateTimeOffset.Now,
                 AgentID = model.AgentID,
-                RatingID = model.RatingID,
                 AuthorId = _userId
 
             };
@@ -46,7 +45,6 @@ namespace JustGoTravel.Services
             {
                 ID = e.ID,
                 AgentID = e.AgentID,
-                RatingID = e.RatingID,
                 Title = e.Title,
                 TripLength = e.TripLength,
                 TotalCost = e.TotalCost,
@@ -66,7 +64,6 @@ namespace JustGoTravel.Services
             {
                 ID = entity.ID,
                 AgentID = entity.AgentID,
-                RatingID = entity.RatingID,
                 Title = entity.Title,
                 TripLength = entity.TripLength,
                 TotalCost = entity.TotalCost,
@@ -84,7 +81,6 @@ namespace JustGoTravel.Services
                 .Single(e => e.ID == model.ID && e.AuthorId == _userId);
 
             entity.AgentID = model.AgentID;
-            entity.RatingID = model.RatingID;
             entity.Title = model.Title;
             entity.TripLength = model.TripLength;
             entity.TotalCost = model.TotalCost;

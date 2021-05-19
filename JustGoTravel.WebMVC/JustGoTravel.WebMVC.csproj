@@ -240,7 +240,6 @@
     <Content Include="Views\VacationPack\Index.cshtml" />
     <Content Include="Views\Rating\Index.cshtml" />
     <Content Include="Views\Agent\Index.cshtml" />
-    <Content Include="Views\Rating\Create.cshtml" />
     <Content Include="Views\VacationPack\Create.cshtml" />
     <Content Include="Views\Agent\Create.cshtml" />
     <Content Include="Views\VacationPack\Details.cshtml" />
@@ -250,6 +249,10 @@
     <Content Include="Views\Agent\Details.cshtml" />
     <Content Include="Views\Agent\Edit.cshtml" />
     <Content Include="Views\Agent\Delete.cshtml" />
+    <Content Include="Views\Rating\Details.cshtml" />
+    <Content Include="Views\Rating\Create.cshtml" />
+    <Content Include="Views\Rating\Edit.cshtml" />
+    <Content Include="Views\Rating\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

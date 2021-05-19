@@ -3,10 +3,60 @@ namespace JustGoTravel.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class FirstMigration : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Agent",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        AuthorId = c.Guid(nullable: false),
+                        FirstName = c.String(nullable: false, maxLength: 25),
+                        LastName = c.String(nullable: false, maxLength: 25),
+                        Company = c.String(),
+                        PhoneNumber = c.String(nullable: false, maxLength: 15),
+                        Email = c.String(nullable: false),
+                        LinkedIn = c.String(),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.VacationPack",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        AuthorId = c.Guid(nullable: false),
+                        Title = c.String(nullable: false),
+                        TripLength = c.Int(nullable: false),
+                        TotalCost = c.Double(nullable: false),
+                        Location = c.String(nullable: false),
+                        Description = c.String(),
+                        Included = c.String(nullable: false),
+                        TimeOfPublication = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
+                        AgentID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Agent", t => t.AgentID, cascadeDelete: true)
+                .Index(t => t.AgentID);
+            
+            CreateTable(
+                "dbo.Rating",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        AuthorID = c.Guid(nullable: false),
+                        StarRating = c.Double(nullable: false),
+                        HotelRating = c.Double(nullable: false),
+                        FoodRating = c.Double(nullable: false),
+                        VacationPackID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.VacationPack", t => t.VacationPackID, cascadeDelete: true)
+                .Index(t => t.VacationPackID);
+            
             CreateTable(
                 "dbo.IdentityRole",
                 c => new
@@ -77,80 +127,30 @@ namespace JustGoTravel.Data.Migrations
                 .ForeignKey("dbo.ApplicationUser", t => t.ApplicationUser_Id)
                 .Index(t => t.ApplicationUser_Id);
             
-            CreateTable(
-                "dbo.VacationPack",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        AuthorId = c.Guid(nullable: false),
-                        Title = c.String(nullable: false),
-                        TripLength = c.Int(nullable: false),
-                        TotalCost = c.Double(nullable: false),
-                        Location = c.String(nullable: false),
-                        Description = c.String(),
-                        Included = c.String(nullable: false),
-                        TimeOfPublication = c.DateTimeOffset(nullable: false, precision: 7),
-                        ModifiedUtc = c.DateTimeOffset(precision: 7),
-                        RatingID = c.Int(nullable: false),
-                        AgentID = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Agent", t => t.AgentID, cascadeDelete: true)
-                .ForeignKey("dbo.Rating", t => t.RatingID, cascadeDelete: true)
-                .Index(t => t.RatingID)
-                .Index(t => t.AgentID);
-            
-            CreateTable(
-                "dbo.Agent",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        AuthorId = c.Guid(nullable: false),
-                        FirstName = c.String(nullable: false, maxLength: 25),
-                        LastName = c.String(nullable: false, maxLength: 25),
-                        Company = c.String(),
-                        PhoneNumber = c.String(nullable: false, maxLength: 15),
-                        Email = c.String(nullable: false),
-                        LinkedIn = c.String(),
-                    })
-                .PrimaryKey(t => t.ID);
-            
-            CreateTable(
-                "dbo.Rating",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        AuthorID = c.Guid(nullable: false),
-                        StarRating = c.Double(nullable: false),
-                        HotelRating = c.Double(nullable: false),
-                        FoodRating = c.Double(nullable: false),
-                    })
-                .PrimaryKey(t => t.ID);
-            
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.VacationPack", "RatingID", "dbo.Rating");
-            DropForeignKey("dbo.VacationPack", "AgentID", "dbo.Agent");
             DropForeignKey("dbo.IdentityUserRole", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
-            DropIndex("dbo.VacationPack", new[] { "AgentID" });
-            DropIndex("dbo.VacationPack", new[] { "RatingID" });
+            DropForeignKey("dbo.Rating", "VacationPackID", "dbo.VacationPack");
+            DropForeignKey("dbo.VacationPack", "AgentID", "dbo.Agent");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
-            DropTable("dbo.Rating");
-            DropTable("dbo.Agent");
-            DropTable("dbo.VacationPack");
+            DropIndex("dbo.Rating", new[] { "VacationPackID" });
+            DropIndex("dbo.VacationPack", new[] { "AgentID" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.Rating");
+            DropTable("dbo.VacationPack");
+            DropTable("dbo.Agent");
         }
     }
 }

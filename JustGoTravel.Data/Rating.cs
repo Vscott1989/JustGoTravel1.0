@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,9 @@ namespace JustGoTravel.Data
         
         public double FoodRating { get; set; }
 
-        public virtual ICollection<VacationPack> VacationPacks { get; set; } = new List<VacationPack>();
+        [ForeignKey(nameof(VacationPack))]
+        public int VacationPackID { get; set; }
+        public virtual VacationPack VacationPack { get; set; }
+        
     }
 }

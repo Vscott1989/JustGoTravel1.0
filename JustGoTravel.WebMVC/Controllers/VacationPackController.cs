@@ -65,7 +65,6 @@ namespace JustGoTravel.WebMVC.Controllers
             {
                 ID = detail.ID,
                 AgentID = detail.AgentID,
-                RatingID = detail.RatingID,
                 Title = detail.Title,
                 TripLength = detail.TripLength,
                 TotalCost = detail.TotalCost,

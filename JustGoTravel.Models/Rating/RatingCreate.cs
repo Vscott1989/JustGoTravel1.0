@@ -17,5 +17,6 @@ namespace JustGoTravel.Models.Rating
 
         [Display(Name = "Food Rating")]
         public double FoodRating { get; set; }
+        public int VacationPackID { get; set; }
     }
 }

@@ -1,0 +1,42 @@
+﻿@model JustGoTravel.Models.Rating.RatingDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RatingDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StarRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StarRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HotelRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotelRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoodRating)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -9,11 +9,7 @@ namespace JustGoTravel.Models.VacationPack
 {
    public class VacationCreate
     {
-        
-        [Required]
         public int AgentID { get; set; }
-        [Required]
-        public int RatingID { get; set; }
 
         [Required]
         [MaxLength(100, ErrorMessage = "Sorry you entered to many Charachers")]

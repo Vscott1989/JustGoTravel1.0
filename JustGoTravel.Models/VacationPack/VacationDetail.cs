@@ -14,9 +14,6 @@ namespace JustGoTravel.Models.VacationPack
         public int AgentID { get; set; }
 
         [Required]
-        public int RatingID { get; set; }
-
-        [Required]
         [Display(Name = "Title of Vacation Package")]
         public string Title { get; set; }
 
@@ -43,6 +40,6 @@ namespace JustGoTravel.Models.VacationPack
         [Display(Name = "Date Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }
 
-
+        public virtual ICollection<VacationPackListItemRating> Ratings { get; set; }
     }
 }
