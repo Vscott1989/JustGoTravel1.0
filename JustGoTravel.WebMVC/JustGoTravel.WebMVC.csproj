@@ -247,6 +247,9 @@
     <Content Include="Views\VacationPack\Edit.cshtml" />
     <Content Include="Views\VacationPack\Delete.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTimeOffset.cshtml" />
+    <Content Include="Views\Agent\Details.cshtml" />
+    <Content Include="Views\Agent\Edit.cshtml" />
+    <Content Include="Views\Agent\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

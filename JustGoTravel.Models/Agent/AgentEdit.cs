@@ -7,15 +7,18 @@ using System.Threading.Tasks;
 
 namespace JustGoTravel.Models.Agent
 {
-   public class AgentCreate
+   public class AgentEdit
     {
-        [Required, Display(Name ="First Name")]
+        public int ID { get; set; }
+
+        [Required, Display(Name = "First Name")]
         [MaxLength(25, ErrorMessage = "First name should be between 3-25 characters")]
         public string FirstName { get; set; }
 
-        [Required, Display(Name ="Last Name")]
-        [MaxLength(25,  ErrorMessage = "Fist name should be between 3-25 characters")]
+        [Required, Display(Name = "Last Name")]
+        [MaxLength(25, ErrorMessage = "Fist name should be between 3-25 characters")]
         public string LastName { get; set; }
+
         public string Company { get; set; }
 
         [Required]
