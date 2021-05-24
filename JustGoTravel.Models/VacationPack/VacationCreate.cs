@@ -17,7 +17,7 @@ namespace JustGoTravel.Models.VacationPack
         public string Title { get; set; }
 
         [Required]
-        [Display(Name ="Length of Trip in Days")]
+        [Display(Name ="Days of Trip")]
         public int TripLength { get; set; }
 
         [Required]

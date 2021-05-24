@@ -17,7 +17,7 @@ namespace JustGoTravel.Models.VacationPack
         [Display(Name = "Title of Vacation Package ")]
         public string Title { get; set; }
 
-        [Display(Name = "Length of Trip in Days")]
+        [Display(Name = "Days of Trip")]
         public int TripLength { get; set; }
 
         [Display(Name = "Package Price")]

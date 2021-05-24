@@ -9,48 +9,31 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert alert-success fade in" role="alert">
-        @ViewBag.SaveResult
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-        @TempData["SaveResult"]
-    </div>
-}
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.StarRating)
+            @Html.DisplayNameFor(model => model.VactionPackID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.HotelRating)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FoodRating)
+            @Html.DisplayNameFor(model => model.VacationPackName)
         </th>
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.StarRating)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HotelRating)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FoodRating)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-            </td>
-        </tr>
-    }
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.VactionPackID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.VacationPackName)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+    </td>
+</tr>
+}
 
 </table>

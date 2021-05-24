@@ -72,6 +72,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\JustGoTravel.Data\JustGoTravel.Data.csproj">
+      <Project>{22b3bb88-ea8c-4718-b75c-9096e9818812}</Project>
+      <Name>JustGoTravel.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

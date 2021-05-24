@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace JustGoTravel.Data
 {
-   public class VacationPack
+    public class VacationPack
     {
         [Key]
         public int ID { get; set; }
-        
+
         [Required]
         public Guid AuthorId { get; set; }
 
         [Required]
         public string Title { get; set; }
 
-        [Required, Range (1, 100)]
+        [Required, Range(1, 100)]
         public int TripLength { get; set; }
 
         [Required]
@@ -35,14 +35,32 @@ namespace JustGoTravel.Data
         public DateTimeOffset TimeOfPublication { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
 
-        public virtual ICollection<Rating> Ratings { get; set; }
+        public virtual ICollection<Rating> Ratings { get; set; } = new List<Rating>();
 
         [Required]
         [ForeignKey(nameof(Agent))]
         public int AgentID { get; set; }
         public virtual Agent Agent { get; set; }
 
-        
+        public double Rating
+        {
+            get
+            {
+                double tAvg = 0;
+                foreach (var rating in Ratings)
+                {
+                    tAvg += rating.StarRating;
+                }
+                return Ratings.Count > 0 
+                    ? Math.Round( tAvg / Ratings.Count, 2) //if rating.count > 0
+                    : 0;//if rating.count not > 0
+            }
+        }
+        public bool IsRecommended { get 
+            {
+                return Rating > 3;
+            } 
+        }
 
     }
 }

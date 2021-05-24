@@ -1,4 +1,5 @@
-﻿using JustGoTravel.Models.Rating;
+﻿using JustGoTravel.Data;
+using JustGoTravel.Models.Rating;
 using JustGoTravel.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -9,9 +10,13 @@ using System.Web.Mvc;
 
 namespace JustGoTravel.WebMVC.Controllers
 {
+
     [Authorize]
     public class RatingController : Controller
     {
+        private readonly ApplicationDbContext _context = new ApplicationDbContext();
+        //CRUD 
+
         // GET: Rating
         public ActionResult Index()
         {
@@ -31,6 +36,7 @@ namespace JustGoTravel.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(RatingCreate model)
         {
+            //ModelState is Invalid
             if (!ModelState.IsValid)
                 return View(model);
 
@@ -38,8 +44,9 @@ namespace JustGoTravel.WebMVC.Controllers
             if (service.CreateRating(model))
             {
                TempData["SaveResult"] = "Rating was Created";
-                return RedirectToAction("index");
+                return RedirectToAction("Index");
             };
+
             ModelState.AddModelError("", "Rating Could NOT be Created");
             return View(model);
         }
@@ -58,7 +65,6 @@ namespace JustGoTravel.WebMVC.Controllers
                 new RatingEdit
                 {
                     ID = detail.ID,
-                    StarRating = detail.StarRating,
                     HotelRating = detail.HotelRating,
                     FoodRating = detail.FoodRating
                 };

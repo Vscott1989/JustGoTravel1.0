@@ -10,15 +10,20 @@ namespace JustGoTravel.Models.Rating
    public class RatingListItem
     {
         public int ID { get; set; }
-        public int VactionID { get; set; }
 
-        [Display(Name = "StarRating (0-5)")]
-        public double StarRating { get; set; }
+        [Display(Name = "Vacation ID")]
+        public int VactionPackID { get; set; }
 
-        [Display(Name = "Hotel Rating (0-5)")]
-        public double HotelRating { get; set; }
+        [Display(Name = "Vacation Name")]
+        public string VacationPackName { get; set; }
 
-        [Display(Name = "Food Rating (0-5)")]
-        public double FoodRating { get; set; }
+        //[Display(Name = "StarRating (0-5)")]
+        //public double StarRating { get; set; }
+
+        //[Display(Name = "Hotel Rating (0-5)")]
+        //public double HotelRating { get; set; }
+
+        //[Display(Name = "Food Rating (0-5)")]
+        //public double FoodRating { get; set; }
     }
 }

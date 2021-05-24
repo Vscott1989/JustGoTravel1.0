@@ -12,8 +12,10 @@ namespace JustGoTravel.Models.Agent
     {
         public int ID { get; set; }
 
+
         [Required, Display(Name = "First Name")]
         public string FirstName { get; set; }
+
 
         [Required, Display(Name = "Last Name")]
         public string LastName { get; set; }
@@ -27,6 +29,9 @@ namespace JustGoTravel.Models.Agent
         [EmailAddress]
         public string Email { get; set; }
         public string LinkedIn { get; set; }
+
+
+
         public virtual ICollection<VacationPackListItemAgent> VacationPacks { get; set; } 
     }
 }

@@ -10,12 +10,20 @@
     <h4>VacationDetail</h4>
     <hr />
     <dl class="dl-horizontal">
+
         <dt>
-            @Html.DisplayNameFor(model => model.AgentID)
+            @Html.DisplayNameFor(model => model.AgentName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.AgentID)
+            @Html.DisplayFor(model => model.AgentName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AgentFirst)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgentFirst)
         </dd>
 
         <dt>
@@ -81,6 +89,7 @@
         <dd>
             @Html.DisplayFor(model => model.ModifiedUtc)
         </dd>
+
 
     </dl>
 </div>

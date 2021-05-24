@@ -14,3 +14,6 @@ C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\bin\Debug\EntityFra
 C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\obj\Debug\JustGoTravel.Models.csproj.CopyComplete
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\bin\Debug\JustGoTravel.Data.dll
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\bin\Debug\JustGoTravel.Data.pdb
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Models\bin\Debug\JustGoTravel.Data.dll.config

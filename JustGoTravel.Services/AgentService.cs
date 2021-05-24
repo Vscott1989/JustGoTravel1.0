@@ -68,6 +68,7 @@ namespace JustGoTravel.Services
                 PhoneNumber = entity.PhoneNumber,
                 Email = entity.Email,
                 LinkedIn = entity.LinkedIn
+
             };
         }
         public bool UpdateAgent(AgentEdit model)

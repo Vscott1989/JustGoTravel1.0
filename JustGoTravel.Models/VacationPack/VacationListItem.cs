@@ -12,9 +12,13 @@ namespace JustGoTravel.Models.VacationPack
         [Display(Name = "ID")]
         public int ID { get; set; }
         public int AgentID { get; set; }
+
+        [Display(Name = "Agent LastName")]
+        public string AgentName { get; set; }
+
         [Display(Name = "Vacation Package Name")]
         public string Title { get; set; }
-        [Display(Name = "Length of Trip")]
+        [Display(Name = "Days of Trip")]
         public int TripLength { get; set; }
         [Display(Name = "Total Cost")]
         public double TotalCost { get; set; }
@@ -25,6 +29,7 @@ namespace JustGoTravel.Models.VacationPack
         [Display(Name = "What was Included in package?")]
         public string Included { get; set; }
         [Display(Name = "Created")]
+   
         public DateTimeOffset TimeOfPublication { get; set; }
 
     }
@@ -34,7 +39,7 @@ namespace JustGoTravel.Models.VacationPack
 
         [Display(Name = "ID")]
         public string Title { get; set; }
-        [Display(Name = "Length of Trip")]
+        [Display(Name = "Days of Trip")]
         public int TripLength { get; set; }
         [Display(Name = "Total Cost")]
         public double TotalCost { get; set; }
@@ -56,7 +61,7 @@ namespace JustGoTravel.Models.VacationPack
 
         [Display(Name = "Vacation Package Name")]
         public string Title { get; set; }
-        [Display(Name = "Length of Trip")]
+        [Display(Name = "Days of Trip")]
         public int TripLength { get; set; }
         [Display(Name = "Total Cost")]
         public double TotalCost { get; set; }

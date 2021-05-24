@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace JustGoTravel.Services
 {
-   public class RatingService
+    public class RatingService
     {
         private readonly ApplicationDbContext _context = new ApplicationDbContext();
 
@@ -23,32 +23,31 @@ namespace JustGoTravel.Services
             var entity = new Rating()
             {
                 AuthorID = _userId,
-                StarRating = model.StarRating,
                 HotelRating = model.HotelRating,
                 FoodRating = model.FoodRating,
                 VacationPackID = model.VacationPackID
             };
-            
-            
-                _context.Ratings.Add(entity);
-                return _context.SaveChanges() == 1;
-            
+
+
+            _context.Ratings.Add(entity);
+            return _context.SaveChanges() == 1;
+
         }
         public IEnumerable<RatingListItem> GetRating()
-        {            
-                var query = _context
-                    .Ratings
-                    .Where(e => e.AuthorID == _userId)
-                    .Select(e => new RatingListItem
-                    {
-                        ID = e.ID,
-                        VactionID=e.VacationPackID,
-                        StarRating = e.StarRating,
-                        HotelRating = e.HotelRating,
-                        FoodRating = e.FoodRating
-                        
-                    });
-                return query.ToArray();    
+        {
+            var query = _context
+                .Ratings
+                .Where(e => e.AuthorID == _userId)
+                .Select(e => new RatingListItem
+                {
+                    ID = e.ID,
+                    VactionPackID = e.VacationPackID,
+                    VacationPackName = _context.Ratings
+                    .FirstOrDefault(x => x.VacationPackID == e.VacationPackID)
+                    .VacationPack.Title
+
+                });
+            return query.ToArray();
         }
         public RatingDetail GetRatingById(int id)
         {
@@ -58,11 +57,14 @@ namespace JustGoTravel.Services
             return new RatingDetail
             {
                 ID = entity.ID,
-                VacationID=entity.VacationPackID,
+                VacationPackID = entity.VacationPackID,
+                VacationPackName = _context.Ratings
+                 .FirstOrDefault(x => x.VacationPackID == entity.VacationPackID)
+                 .VacationPack.Title,
                 StarRating = entity.StarRating,
                 HotelRating = entity.HotelRating,
                 FoodRating = entity.FoodRating,
-               
+
             };
         }
         public bool UpdateRating(RatingEdit model)
@@ -71,12 +73,13 @@ namespace JustGoTravel.Services
                 .Ratings
                 .Single(e => e.ID == model.ID && e.AuthorID == _userId);
 
-            entity.StarRating = model.StarRating;
+
             entity.HotelRating = model.HotelRating;
             entity.FoodRating = model.FoodRating;
 
+
             return _context.SaveChanges() == 1;
-            
+
         }
         public bool DeleteRating(int id)
         {

@@ -1,4 +1,5 @@
 ﻿using JustGoTravel.Data;
+using JustGoTravel.Models.Rating;
 using JustGoTravel.Models.VacationPack;
 using System;
 using System.Collections.Generic;
@@ -45,6 +46,9 @@ namespace JustGoTravel.Services
             {
                 ID = e.ID,
                 AgentID = e.AgentID,
+                AgentName = _context.VacationPacks
+                .FirstOrDefault(x => x.AgentID == e.AgentID)
+                .Agent.LastName,
                 Title = e.Title,
                 TripLength = e.TripLength,
                 TotalCost = e.TotalCost,
@@ -55,6 +59,20 @@ namespace JustGoTravel.Services
             });
             return VacationList;
         }
+
+        public List<RatingListItem> GetRating() 
+        {
+            var RatingList = _context
+                .Ratings
+                .Select(r => new RatingListItem
+                {
+                    ID = r.ID,
+                    VactionPackID = r.VacationPackID,
+
+                }).ToList();
+            return RatingList;
+        }
+
         public VacationDetail GetVacationByID(int id)
         {
             var entity = _context
@@ -64,6 +82,12 @@ namespace JustGoTravel.Services
             {
                 ID = entity.ID,
                 AgentID = entity.AgentID,
+                AgentName = _context.VacationPacks
+                .FirstOrDefault(x=>x.AgentID == entity.AgentID)
+                .Agent.LastName,
+                AgentFirst= _context.VacationPacks
+                .FirstOrDefault(x=>x.AgentID == entity.AgentID)
+                .Agent.FirstName,
                 Title = entity.Title,
                 TripLength = entity.TripLength,
                 TotalCost = entity.TotalCost,
@@ -71,7 +95,9 @@ namespace JustGoTravel.Services
                 Included = entity.Included,
                 Description = entity.Description,
                 TimeOfPublication = entity.TimeOfPublication,
-                ModifiedUtc = entity.ModifiedUtc
+                ModifiedUtc = entity.ModifiedUtc,
+                
+
             };
         }
         public bool UpdateVacation(VacationEdit model)

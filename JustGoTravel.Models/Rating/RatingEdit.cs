@@ -10,7 +10,7 @@ namespace JustGoTravel.Models.Rating
     public class RatingEdit
     {
         public int ID { get; set; }
-        public int VacationID { get; set; }
+        public int VacationPackID { get; set; }
 
         [Display(Name = "StarRating")]
         public double StarRating { get; set; }

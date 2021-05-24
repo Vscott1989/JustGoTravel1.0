@@ -35,11 +35,10 @@
             @Html.DisplayNameFor(model => model.Location)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.AgentName)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Included)
-        </th>
+        
+
         <th>
             @Html.DisplayNameFor(model => model.TimeOfPublication)
         </th>
@@ -65,11 +64,9 @@
                 @Html.DisplayFor(modelItem => item.Location)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Description)
+                @Html.DisplayFor(modelItem => item.AgentName)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Included)
-            </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.TimeOfPublication)
             </td>

@@ -16,3 +16,4 @@ C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Data\obj\Debug\JustGoTrave
 C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Data\obj\Debug\JustGoTravel.Data.pdb
 C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Data\obj\Debug\JustGoTravel.Data.Migrations.FirstMigration.resources
 C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Data\obj\Debug\JustGoTravel.Data.csproj.GenerateResource.cache
+C:\Users\Nessa\source\repos\JustGoTravel\JustGoTravel.Data\obj\Debug\JustGoTravel.Data.Migrations.FirstUpdatedVacationPackData.resources

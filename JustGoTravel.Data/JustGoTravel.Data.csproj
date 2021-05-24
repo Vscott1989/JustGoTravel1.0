@@ -61,6 +61,10 @@
     <Compile Include="Migrations\202105192156473_FirstMigration.Designer.cs">
       <DependentUpon>202105192156473_FirstMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105221415001_FirstUpdatedVacationPackData.cs" />
+    <Compile Include="Migrations\202105221415001_FirstUpdatedVacationPackData.Designer.cs">
+      <DependentUpon>202105221415001_FirstUpdatedVacationPackData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rating.cs" />
@@ -73,6 +77,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202105192156473_FirstMigration.resx">
       <DependentUpon>202105192156473_FirstMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105221415001_FirstUpdatedVacationPackData.resx">
+      <DependentUpon>202105221415001_FirstUpdatedVacationPackData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -24,6 +24,10 @@ namespace JustGoTravel.WebMVC.Controllers
         //GET CREATE
         public ActionResult Create()
         {
+            var svc = CreateVacationService();
+            var ratingList = svc.GetRating();
+
+            ViewBag.VacatoinsRatingList = new SelectList(ratingList, "ID", "VacationPackID");
             return View();
         }
         //POST CREATE
