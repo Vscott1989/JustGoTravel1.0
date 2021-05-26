@@ -38,13 +38,16 @@ namespace JustGoTravel.Models.VacationPack
         [Display(Name = "Comments")]
         public string Description { get; set; }
 
+        [Display(Name = "StarRating (0-5)")]
+        public double StarRating { get; set; }
+
         [Display(Name ="Created")]
         public DateTimeOffset TimeOfPublication { get; set; }
 
         [Display(Name = "Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }
-        public Double RatingStarRating { get; set; }
 
 
+        public virtual ICollection<VacationPackListItemRating> Ratings { get; set; } 
     }
 }

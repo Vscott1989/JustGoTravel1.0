@@ -67,6 +67,7 @@ namespace JustGoTravel.WebMVC.Controllers
                     ID = detail.ID,
                     HotelRating = detail.HotelRating,
                     FoodRating = detail.FoodRating
+
                 };
             return View(model);
         }

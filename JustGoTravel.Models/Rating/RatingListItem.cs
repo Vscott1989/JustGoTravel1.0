@@ -17,8 +17,8 @@ namespace JustGoTravel.Models.Rating
         [Display(Name = "Vacation Name")]
         public string VacationPackName { get; set; }
 
-        //[Display(Name = "StarRating (0-5)")]
-        //public double StarRating { get; set; }
+        [Display(Name = "StarRating (0-5)")]
+        public double StarRating { get; set; }
 
         //[Display(Name = "Hotel Rating (0-5)")]
         //public double HotelRating { get; set; }

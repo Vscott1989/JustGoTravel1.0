@@ -96,6 +96,7 @@ namespace JustGoTravel.Services
                 Description = entity.Description,
                 TimeOfPublication = entity.TimeOfPublication,
                 ModifiedUtc = entity.ModifiedUtc,
+
                 
 
             };

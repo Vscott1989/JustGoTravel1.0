@@ -28,9 +28,12 @@ namespace JustGoTravel.Models.VacationPack
         public string Description { get; set; }
         [Display(Name = "What was Included in package?")]
         public string Included { get; set; }
+
         [Display(Name = "Created")]
-   
         public DateTimeOffset TimeOfPublication { get; set; }
+
+
+
 
     }
     public class VacationPackListItemAgent
@@ -51,6 +54,7 @@ namespace JustGoTravel.Models.VacationPack
         public string Included { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset TimeOfPublication { get; set; }
+
 
     }
     public class VacationPackListItemRating
@@ -73,6 +77,8 @@ namespace JustGoTravel.Models.VacationPack
         public string Included { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset TimeOfPublication { get; set; }
+
+
 
     }
 }

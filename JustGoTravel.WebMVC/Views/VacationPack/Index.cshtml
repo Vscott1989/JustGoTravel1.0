@@ -4,11 +4,12 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
+<h2>Packages</h2>
+
+
+
 @if (TempData.ContainsKey("SaveResult"))
 {
     <div class="alert alert-success fade in" role="alert">
@@ -17,33 +18,34 @@
         @TempData["SaveResult"]
     </div>
 }
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TripLength)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TotalCost)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AgentName)
-        </th>
-        
+<table class="table table-striped">
+    <thead>
 
-        <th>
-            @Html.DisplayNameFor(model => model.TimeOfPublication)
-        </th>
-        <th></th>
-    </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TripLength)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AgentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeOfPublication)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
 
     @foreach (var item in Model)
     {
@@ -71,11 +73,25 @@
                 @Html.DisplayFor(modelItem => item.TimeOfPublication)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.ID}) |
-                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+                <div class="btn-group  btn-group-toggle" data-toggle="buttons">
+                    <label class=" btn btn-outline-secondary">
+                        <input type="radio" name="options" id="Option1" />
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                    </label>
+                    <label class=" btn btn-outline-secondary">
+                        <input type="radio" name="options" id="Option1" />
+                        @Html.ActionLink("Details", "Details", new { id = item.ID })
+                    </label>
+                    <label class=" btn btn-outline-secondary">
+                        <input type="radio" name="options" id="Option1" />
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    </label>
+                </div>
             </td>
         </tr>
     }
 
 </table>
+
+<button type="button" class="btn btn-primary btn-lg btn-block" style="background-color:whitesmoke;">@Html.ActionLink("Create New", "Create")</button>
+ 

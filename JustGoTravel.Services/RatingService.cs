@@ -45,6 +45,7 @@ namespace JustGoTravel.Services
                     VacationPackName = _context.Ratings
                     .FirstOrDefault(x => x.VacationPackID == e.VacationPackID)
                     .VacationPack.Title
+                    
 
                 });
             return query.ToArray();
