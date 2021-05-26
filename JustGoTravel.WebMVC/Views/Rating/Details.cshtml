@@ -4,43 +4,75 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Rating</h2>
 
 <div>
-    <h4>RatingDetail</h4>
+
     <hr />
     <dl class="dl-horizontal">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.VacationPackName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.VacationPackName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.StarRating)
-        </dt>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+  
+                </div>
+                <div class="col">
 
-        <dd>
-            @Html.DisplayFor(model => model.StarRating)
-        </dd>
+                    <dt style="font-size:x-small">
+                        @Html.DisplayNameFor(model => model.VacationPackName)
+                    </dt>
+                    <dd style="font-size:x-large">
+                        @Html.DisplayFor(model => model.VacationPackName)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HotelRating)
-        </dt>
+                </div>
+                <div class="col">
+     
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
 
-        <dd>
-            @Html.DisplayFor(model => model.HotelRating)
-        </dd>
+                </div>
+                <div class="col">
+                    <dt style="font-size:x-small">
+                        @Html.DisplayNameFor(model => model.StarRating)
+                    </dt>
+                    <img src="https://image.flaticon.com/icons/png/128/1828/1828884.png" />
+                    <dd style="font-size:60px">
+                        @Html.DisplayFor(model => model.StarRating)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FoodRating)
-        </dt>
+                </div>
+                <div class="col">
 
-        <dd>
-            @Html.DisplayFor(model => model.FoodRating)
-        </dd>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <dt style="font-size:small">
+                        @Html.DisplayNameFor(model => model.HotelRating)
+                    </dt>
 
+                    <dd>
+                        @Html.DisplayFor(model => model.HotelRating)
+                    </dd>
+                </div>
+                <div class="col">
+
+                </div>
+                <div class="col">
+                    <dt style="font-size:small">
+                        @Html.DisplayNameFor(model => model.FoodRating)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.FoodRating)
+                    </dd>
+
+                </div>
+            </div>
+        </div>
     </dl>
 </div>
 <p>

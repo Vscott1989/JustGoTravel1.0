@@ -6,91 +6,171 @@
 
 <h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+
 <div>
-    <h4>VacationDetail</h4>
-    <hr />
+
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.AgentID)
-        </dt>
+        <div class="container">
+            <div class="row" style="background-color:lightgray">
+                
 
-        <dd>
-            @Html.DisplayFor(model => model.AgentID)
-        </dd>
+                <div class="col">
+                    <h4>Are you sure you want to delete this Package?</h4>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+                </div>
+                <div class="col"></div>
+            </div>
+            <hr />
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+            <div class="row">
+                <div class="col">
+                    <h3>HME</h3>
+                    <p>Home</p>
+                </div>
+                <div class="col">
+                    <img src="https://cdn0.iconfinder.com/data/icons/gcons-2/22/airplane1-512.png" width="50" height="50" />
+                </div>
+                <div class="col">
+                    <h3>DMV</h3>
+                    <p>Dream Vacation</p>
+                </div>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TripLength)
-        </dt>
+            <hr />
+            <div class="row">
+                <div class="col">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.AgentID)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TripLength)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.AgentID)
+                    </dd>
+                </div>
+                <div class="col">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TotalCost)
-        </dt>
+                </div>
+                <div class="col">
 
-        <dd>
-            @Html.DisplayFor(model => model.TotalCost)
-        </dd>
+                </div>
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Location)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Location)
-        </dd>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Included)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Title)
+                    </dd>
+                </div>
+                <div class="col"></div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Included)
-        </dd>
+            <div class="row">
+                <div class="col">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TripLength)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.TripLength)
+                    </dd>
+                </div>
+                <div class="col">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TotalCost)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TimeOfPublication)
-        </dt>
+                    <dd>
+                        $
+                        @Html.DisplayFor(model => model.TotalCost).00
+                    </dd>
+                </div>
+                <div class="col">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Location)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TimeOfPublication)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Location)
+                    </dd>
+                </div>
+                <div class="col">
+                </div>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedUtc)
-        </dt>
+            <div class="row">
+                <div class="col">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Included)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ModifiedUtc)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Included)
+                    </dd>
+                </div>
+                <div class="col">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </dt>
 
+                    <dd>
+                        @Html.DisplayFor(model => model.Description)
+                    </dd>
+                </div>
+                <div class="col">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TimeOfPublication)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TimeOfPublication)
+                    </dd>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <div class="col"><img src="https://cdn.pixabay.com/photo/2014/04/02/16/19/barcode-306926_1280.png" width="250" height="40" /></div>
+                <div class="col"></div>
+
+                <div class="col">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ModifiedUtc)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ModifiedUtc)
+                    </dd>
+                </div>
+
+            </div>
     </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
 </div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+
+
+
+
+  
